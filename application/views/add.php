@@ -12,7 +12,9 @@
     <a href="/Dashboards">Home</a>
     <a href="/Dashboards/end">Logout</a>
     <form method="post" action="/Dashboards/add/<?php echo $this->session->userdata['user_data']['id']; ?>">
-      <?php echo $this->session->flashdata('add_errors'); ?>
+      <?= $this->session->flashdata('add_errors'); ?>
+      <?= $this->session->flashdata('date_errors'); ?>
+      <?= $this->session->flashdata('end_errors'); ?>
       <input type="text" name="dest" placeholder="Destination">
       <input type="text" name="descr" placeholder="Description">
       <label for="start_date">Travel Start-Date: </label><input type="date" name="start">

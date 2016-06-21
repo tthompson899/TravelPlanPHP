@@ -41,17 +41,24 @@ class Dashboards extends CI_Controller {
       $this->session->set_flashdata('add_errors', $add_errors);
     }
 
-    elseif($date_start < new DateTime(date("Y-m-d")) || $date_end < new DateTime(date("Y-m-d")))
+    if($date_start < new DateTime(date("Y-m-d")) || $date_end < new DateTime(date("Y-m-d")))
     {
-      echo "Start Date and End Date should be a future date";
+      $date_errors = "Start Date and End Date should be a future date!";
+      $this->session->set_flashdata('date_errors', $date_errors);
+      $this->load->view('Add', 'date_errors');
     }
     elseif($date_end < $date_start)
     {
-      echo "Travel Date To should not be before Travel Date From!";
+      $end_errors = "End date cannot be before start date!";
+      $this->session->set_flashdata('end_errors', $end_errors);
+      $this->load->view('Add', 'end_errors');
     }
     else {
       $this->All_User->add($user_id, $this->input->post());
-      redirect("/Dashboards");
+      // get the id of the plan that was just added so in order to show the plan directly afterwards
+      $all_data = $this->All_User->all();
+      // var_dump($all_data); die(); 
+      redirect("/Dashboards", $all_data);
     }
   }
 

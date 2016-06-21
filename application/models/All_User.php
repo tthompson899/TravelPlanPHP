@@ -56,9 +56,8 @@ class All_User extends CI_Model {
   {
     $query = "SELECT plans.*, users.*, users_plans.users_id
               FROM users_plans JOIN plans ON plans.id = users_plans.plans_id
-              JOIN users_plans joiner ON joiner.plans_id = plans.id
-              JOIN users ON users.id = joiner.users_id
-              WHERE joiner.plans_id = ?;";
+              JOIN users ON users.id = users_plans.users_id
+              WHERE users_plans.plans_id = ?";
     $values = array($plans_id);
     return $this->db->query($query, $values)->result_array();
   }
