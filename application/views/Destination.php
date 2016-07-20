@@ -17,8 +17,7 @@
     <h2>Other Users' joining the trip:</h2>
     <?php
         foreach($joining as $values):
-    echo $values['name']. "</br>";
-
-  endforeach;  ?>
+          echo $values['name']. "</br>";
+    endforeach;  ?>
   </body>
 </html>

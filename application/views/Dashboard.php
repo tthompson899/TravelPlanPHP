@@ -22,8 +22,7 @@
         <th>Description</th>
         <th>Travel Start Date</th>
         <th>Travel End Date</th>
-        <?php foreach ($all_data as $value):
-          // var_dump($value); die(); ?>
+        <?php foreach ($all_data as $value): ?>
         <tr>
           <td><a href="/Dashboards/show/<?php echo $value['plans_id'];?>"><?php echo $value['destination']; ?></a></td>
           <td><?php echo $value['description']; ?></td>
@@ -44,9 +43,8 @@
         <?php foreach ($other_users as $values):?>
         <tr>
           <td><?php echo $values['name'] ?></td>
-          <td><a href="/Dashboards/show/<?php echo $values['id']?>"><?php
-            // var_dump($values['id']); die();
-          echo $values['destination'] ?></a></td>
+          <td><a href="/Dashboards/show/<?php echo $values['id']; ?>">
+          <?php echo $values['destination'] ?></a></td>
           <td><?php echo $values['start_date'] ?></td>
           <td><?php echo $values['end_date'] ?></td>
           <td><a href="/Dashboards/join/<?php echo $values['id']; ?>">Join</a></td>

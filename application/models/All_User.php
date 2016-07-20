@@ -11,13 +11,18 @@ class All_User extends CI_Model {
 
     $values = array($post_data['dest'], $post_data['descr'], $post_data['start'], $post_data['end'], $user_id);
     $this->db->query($query, $values);
+
+    $last_id = $this->db->insert_id();
+    $query2 = "INSERT INTO users_plans (plans_id, users_id) VALUES (?, ?)";
+    $values2 = array($last_id, $user_id);
+    $this->db->query($query2, $values2);
   }
 
   public function all()
   {
     $query = "SELECT * FROM plans LEFT JOIN users_plans ON users_plans.plans_id = plans.id
               WHERE plans.created_by_id = ? OR users_plans.users_id = ?";
-    $values = array($this->session->userdata['user_data']['id'], $this->session->userdata['user_data']['id']);
+    $values = array($this->session->userdata['user_data']['id'],$this->session->userdata['user_data']['id']);
     return $this->db->query($query, $values)->result_array();
   }
   // function that grabs all the data NOT from the user wher the user_id != current user_id
@@ -28,7 +33,7 @@ class All_User extends CI_Model {
               FROM plans JOIN users ON plans.created_by_id = users.id
               WHERE plans.id
               NOT IN
-              (SELECT plans.id FROM plans JOIN users_plans
+              (SELECT plans.id FROM plans LEFT JOIN users_plans
               ON users_plans.plans_id = plans.id
               WHERE plans.created_by_id = ? OR users_plans.users_id = ?)";
     $values = array($this->session->userdata['user_data']['id'], $this->session->userdata['user_data']['id']);
@@ -54,11 +59,9 @@ class All_User extends CI_Model {
 
   public function joiners($plans_id)
   {
-    $query = "SELECT plans.*, users.*, users_plans.users_id
-              FROM users_plans JOIN plans ON plans.id = users_plans.plans_id
-              JOIN users ON users.id = users_plans.users_id
-              WHERE users_plans.plans_id = ?";
-    $values = array($plans_id);
+    $query = "SELECT users.* FROM users_plans JOIN users ON users_plans.users_id = users.id
+             WHERE plans_id = ? AND users_id != ?";
+    $values = array($plans_id, $this->session->userdata['user_data']['id']);
     return $this->db->query($query, $values)->result_array();
   }
 }

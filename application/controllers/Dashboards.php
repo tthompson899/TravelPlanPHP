@@ -54,10 +54,9 @@ class Dashboards extends CI_Controller {
       $this->load->view('Add', 'end_errors');
     }
     else {
-      $this->All_User->add($user_id, $this->input->post());
-      // get the id of the plan that was just added so in order to show the plan directly afterwards
+      $just_added = $this->All_User->add($user_id, $this->input->post());
+      // get the id of the plan that was just added in order to show the plan directly afterwards
       $all_data = $this->All_User->all();
-      // var_dump($all_data); die(); 
       redirect("/Dashboards", $all_data);
     }
   }
@@ -72,8 +71,6 @@ class Dashboards extends CI_Controller {
   {
     $show = $this->All_User->show($plan_id);
     $joining = $this->All_User->joiners($plan_id);
-
-    // var_dump($plan_id); die();
     $this->load->view('/Destination', array('show' => $show, 'joining' => $joining));
   }
 
