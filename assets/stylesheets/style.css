@@ -1,3 +1,15 @@
+.jumbotron{
+  background-color: #B1DDA1;
+}
+.show_div{
+  background-color: #97EAF4;
+}
+.add_div{
+  background-color: #CAB9F1;
+}
+.site-wrapper{
+  background-color: #AACEE2; 
+}
 fieldset{
   margin: 10px;
 }
