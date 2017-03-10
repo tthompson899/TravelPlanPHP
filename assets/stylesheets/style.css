@@ -1,7 +1,8 @@
-/*.jumbotron{
+.jumbotron{
   background-color: #B1DDA1;
 }
-.show_div{
+div.show_div{
+  height: 100%;
   background-color: #97EAF4;
 }
 .add_div{
@@ -9,16 +10,13 @@
 }
 .site-wrapper{
   background-color: #AACEE2;
-}*/
-body{
-  background-color: #AACEE2;
 }
 fieldset{
   margin: 10px;
 }
 
 h2{
-  color: blue;
+  color: #003F87;
   margin-left: 224px;
 }
 input {
@@ -39,7 +37,8 @@ input {
   margin: 0 auto;
 }
 #submit{
-  background-color: greenyellow;
+  background-color: #003F87;
+  color: white;
 }
 
 table{
