@@ -1,6 +1,5 @@
-.jumbotron{
+/*.jumbotron{
   background-color: #B1DDA1;
-  color: orange; 
 }
 .show_div{
   background-color: #97EAF4;
@@ -9,6 +8,9 @@
   background-color: #CAB9F1;
 }
 .site-wrapper{
+  background-color: #AACEE2;
+}*/
+body{
   background-color: #AACEE2;
 }
 fieldset{
