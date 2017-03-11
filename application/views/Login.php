@@ -4,8 +4,8 @@
     <meta charset="utf-8">
     <meta name="description" content="Login or register a user">
     <title>Login Or Register</title>
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
-    <link rel="stylesheet" href="/assets/stylesheets/style.css">
+    <link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="/assets/stylesheets/style.css">
   </head>
   <body>
     <div class="site-wrapper">
