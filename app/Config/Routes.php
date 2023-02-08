@@ -30,7 +30,10 @@ $routes->set404Override();
 // We get a performance increase by specifying the default
 // route since we don't have to scan directories.
 $routes->get('/', 'Home::index');
+$routes->add('users/index', 'Users::index');
+$routes->add('users/register', 'Users::register');
 $routes->add('dashboard', 'Dashboards::index');
+
 // $route['journals'] = 'blogs'; to $routes->add('journals', 'Blogs::index');
 // $routes->get('/default_controller', 'Users::index');
 // $route['Dashboard'] = 'users/userDashboard';

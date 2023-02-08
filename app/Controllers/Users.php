@@ -8,6 +8,7 @@ class Users extends BaseController
 {
 
     public $user;
+    public $session;
 
     public function __construct()
     {
@@ -17,7 +18,8 @@ class Users extends BaseController
 
     public function index()
     {
-        return view('Login');
+        $data['message'] = "";
+        return view('Login', $data);
     }
 
     public function register()

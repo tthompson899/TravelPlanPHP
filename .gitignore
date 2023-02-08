@@ -1,3 +1,5 @@
+writable/session
+writable/logs
 .DS_Store
 
 application/cache/*

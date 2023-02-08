@@ -10,9 +10,9 @@
   <body>
     <div class="site-wrapper">
     <h2>Welcome, Please Login or Register</h2>
-      <form method="post" action="/Users/register">
+      <form method="post" action="/users/register">
         <fieldset>
-            <?= $this->session->flashdata('register_errors') ?>
+          <!-- <?php // if (isset($register_errors)) : ?> -->
           <legend>Register</legend>
             <input type="text" name="name" placeholder="Name">
             <input type="text" name="remail" placeholder="Email">
@@ -24,7 +24,7 @@
 
     <form method="post" action="/Users/login">
         <fieldset>
-            <?= $this->session->flashdata('login_errors')?>
+            <!-- <?php // $this->session->getFlashdata('login_errors')?> -->
           <legend>Login</legend>
             <input type="text" name="email" placeholder="Email">
             <input type="password" name="password" placeholder="Password">
