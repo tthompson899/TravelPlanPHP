@@ -5,7 +5,33 @@
     <meta name="description" content="Login or register a user">
     <title>Login Or Register</title>
     <link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
-    <link rel="stylesheet" type="text/css" href="/assets/stylesheets/style.css">
+    <style>
+      h2{
+        color: #003F87;
+        text-align: center;
+      }
+      input {
+        display: block;
+        margin-left: 32px;
+        margin-top: 6px;
+      }
+      form{
+        position: relative;
+        height: auto;
+        -webkit-box-sizing: border-box;
+          -moz-box-sizing: border-box;
+                box-sizing: border-box;
+        padding: 10px;
+        font-size: 16px;
+        max-width: 330px;
+        padding: 15px;
+        margin: 0 auto;
+      }
+      #submit{
+        background-color: #003F87;
+        color: white;
+      }
+    </style>
   </head>
   <body>
     <div class="site-wrapper">
